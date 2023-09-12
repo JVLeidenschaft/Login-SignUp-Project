@@ -17,10 +17,10 @@
              
               include("php/config.php");
               if(isset($_POST['submit'])){
-                $email = mysqli_real_escape_string($con,$_POST['email']);
+                $username = mysqli_real_escape_string($con,$_POST['username']);
                 $password = mysqli_real_escape_string($con,$_POST['password']);
 
-                $result = mysqli_query($con,"SELECT * FROM users WHERE Email='$email' AND Password='$password' ") or die("Select Error");
+                $result = mysqli_query($con,"SELECT * FROM users WHERE Username='$username' AND Username='$username' ") or die("Select Error");
                 $row = mysqli_fetch_assoc($result);
 
                 if(is_array($row) && !empty($row)){
@@ -45,8 +45,8 @@
             <header>Login</header>
             <form action="" method="post">
                 <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <label for="email">Username</label>
+                    <input type="text" name="username" id="username" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
